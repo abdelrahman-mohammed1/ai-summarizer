@@ -1,0 +1,134 @@
+tawiland come with five break point  
+this break point are mobile first 
+good to starting with the mobile layout 
+sm:text-center => مش هيطبق عليه العرض غير لما تكون فعلا العرض من 640px فيما فوق 
+<div className=" text-center sm:text-left "> 
+<p>Hello Gys!</p>
+</div> 
+لما العرض يكون اكبر من او يساوي ال 640px هيطبق ال style ده 
+sm:text-left 
+اما لما يكون العرض اقل من 640px 
+هيطبق عليه ال text-center 
+
+sm  if width >= 640px 
+md  if width >= 768px 
+lg  if width >= 1024px 
+xl  if width >= 1280px 
+2xl if width >= 1536px 
+------------------------------------------------------------------- 
+FLEX BOX : 
+The Most Common Thing using in flex box is 
+flex to display flex 
+items-center to align-items:center 
+justify-between to justify-content:between 
+------------------------------------------------------------------- 
+GRID : 
+انا عندي الموقع متقسم الي 
+header 
+main 
+footer 
+اسرع حاجه تعمل التقسيمه دي هي ال grid 
+
+grid to display grid طبعا 
+
+h-screen === height:100vh ; 
+header take a one row 
+main take a one row 
+footer take a one row 
+to give a element a number of rows grid-rows-numberOfRows 
+grid-rows-3  ==> to get soecific value for each row 
+grid-rows-[auto_1fr_auto] auto mean خد علي قد الكلام الي جوها 
+1fr خد الي بتبقي 
+grid-cols-numberOfCols 
+grid-cols-3 ==> to get specific value for each col 
+grid-col-[auto_1fr_auto] 
+-------------------------------------------------------------------- 
+
+
+to added space between the letter of word by write tracking 
+ring added some shadow outside the element when focus  
+focus:ring focus:ring-yellow-300 focus:ring-offset-2 
+must added the offset with the ring 
+to added the ring must remove the outline 
+active:bg-stone-300 when click to the button the bg of the button change when click to the button 
+disabled:cursor-not-allowed 
+---------------------------------------------------------------------
+checkBox can take the width and height and you need to change the 
+color of checkBox by accent-yellow-400 
+and input style 
+can take the padding and width and height 
+and focus:increase width border 
+outline none bg-colorName-degree 
+focus:outline-none 
+focus:ring focus:ring-yellow-300 
+focus:ring-offset-2 ==> ring do not work if you are 
+not put this 
+
+<input  
+  type="checkbox"
+  className=" h-6 w-6  accent-colorName-degree "/>
+--------------------------------------------------------
+to added border and need a specific width by write this 
+border-2 => mean added border-width:2px ;  
+---------------------- 
+
+
+Reusing Styles with @apply in tawiland 
+هتروح علي ال index.css 
+@layer components{
+  .input{
+    @apply specificStyle 
+  } 
+  .check-box__first{
+    @apply specificStyle
+  }
+}
+
+
+this a way for resuing a style in tawilandCSS 
+
+must write the point before the className 
+.
+
+@layer components{
+  .input{
+    @apply specificStyle
+  } 
+  /*   write anther one  */ 
+  .button{
+    @apply specificStyleForButton
+  }
+}
+
+
+------------------------------------------------------------------- 
+HOW TO Design the loader in tawiland css 
+
+note any class you write you can put to  the @layer components scope
+
+
+first thing put the Loading element inside the parent element 
+and set position absolute to this parent element 
+you need to stratch the element you need to put the top and left,right,bottom to zero 
+in tawiland في كلس يعمل الكلام ده كله اسمه inset-0 
+to make a blur for element you need to put the blur to the element 
+backdrop-blur-sm => هيعمل blur لي ال background 
+
+
+to access to the tawiland Colors inside the index.css file  
+you can write 
+theme() 
+theme is a function write inside what the tawiland you need to access inside the index.css file 
+ 
+
+
+in js we have two type of timer 
+first one is setTimeOut() run just ones after a specific amount of time 
+second one is setInterval() run after a specific amount of time and you must stop it  
+  // to pass the param 
+  const persons = ['ahmed', 'mohamed', 'omar']
+  const timer = setTimeout((person1, person2, person3) => console.log(`Hello Mr ${person1} , Mr ${person2} , Mr ${person3} in Pure js`), 3000, ...persons);
+  if (persons.includes('omar')) {
+    clearTimeout(timer);
+  }
+all thing about setTimeOut
